@@ -16,6 +16,6 @@ public class RegistryHandler {
     }
 
     static {
-        ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, "maous_scythe_mod");
+        ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, "scythe");
     }
 }
