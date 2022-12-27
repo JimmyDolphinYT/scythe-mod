@@ -6,6 +6,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.common.Mod;
@@ -28,17 +29,12 @@ public class ScytheMod
 
     public ScytheMod()
     {
-        // Register the setup method for modloading
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
-        // Register the enqueueIMC method for modloading
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::enqueueIMC);
-        // Register the processIMC method for modloading
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::processIMC);
-        ModItems.register(FMLJavaModLoadingContext.get().getModEventBus());
+        IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        // Register ourselves for server and other game events we are interested in
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
+        ModItems.register(eventBus);
+
         MinecraftForge.EVENT_BUS.register(this);
-        RegistryHandler.init();
     }
 
     private void setup(final FMLCommonSetupEvent event)

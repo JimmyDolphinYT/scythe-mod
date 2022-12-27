@@ -8,8 +8,9 @@ import net.minecraftforge.common.ToolActions;
 
 public class ScytheItem extends AxeItem {
 
-    public ScytheItem(Tier tier, float v, float v1, Properties properties) {
-        super(tier, v, v1, properties);
+
+    public ScytheItem(Tier pTier, float pAttackDamageModifier, float pAttackSpeedModifier, Properties pProperties) {
+        super(pTier, pAttackDamageModifier, pAttackSpeedModifier, pProperties);
     }
 
     @Override
