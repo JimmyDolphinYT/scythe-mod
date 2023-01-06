@@ -1,9 +1,9 @@
 package com.jdolphin.scythe;
 
+import com.jdolphin.scythe.client.gui.screens.ScytheScreen;
+import com.jdolphin.scythe.init.ModItems;
 import com.jdolphin.scythe.keybind.Keybinds;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.components.toasts.SystemToast;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.InputEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -18,7 +18,10 @@ public class ClientEvents {
 		@SubscribeEvent
 		public static void onKeyInput(InputEvent event) {
 			if (Keybinds.KEY_SCYTHE_MENU.consumeClick()) {
-				Minecraft.getInstance().getToasts().addToast(new SystemToast(SystemToast.SystemToastIds.TUTORIAL_HINT, new TextComponent("b"), null));
+				Minecraft minecraft = Minecraft.getInstance();
+				if (minecraft.player.getMainHandItem().is(ModItems.SCYTHE.get())) {
+					minecraft.setScreen(new ScytheScreen());
+				}
 			}
 		}
 	}
