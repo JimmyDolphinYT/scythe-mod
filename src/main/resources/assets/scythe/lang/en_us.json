@@ -1,4 +1,13 @@
 {
   "item.scythe.clockwork_scythe": "Clockwork Scythe",
-  "menu.scythe.scythe": "Scythe"
+  "menu.scythe.dimension": "Dimension selector",
+  "menu.scythe.ability": "Scythe Abilities",
+  "key.category.scythe": "Scythe Keybindings",
+  "key.scythe.scythe_menu": "Scythe Menu",
+  "scythe.ability.dim_hop": "Dimensional Hop",
+  "scythe.ability.dash": "Dash",
+  "scythe.ability.invisibility": "Invisibility",
+  "scythe.ability.passive": "Passive"
+
+
 }

@@ -11,7 +11,7 @@ import java.util.HashSet;
 public class Keybinds {
     protected static HashSet<KeyMapping> keyMappings = new HashSet<>();
 
-    public static final String SCYTHE_MENU_CATEGORY = "key.category.scythe.scythe_menu";
+    public static final String SCYTHE_MENU_CATEGORY = "key.category.scythe";
     public static final String SCYTHE_MENU_KEY = "key.scythe.scythe_menu";
 
     public static final KeyMapping KEY_SCYTHE_MENU = createMapping(SCYTHE_MENU_KEY, KeyConflictContext.IN_GAME,

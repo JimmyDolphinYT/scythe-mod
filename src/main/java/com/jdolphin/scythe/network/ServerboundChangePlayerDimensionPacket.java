@@ -4,6 +4,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
@@ -13,6 +14,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.network.NetworkEvent;
 
+import java.util.Objects;
 import java.util.function.Supplier;
 
 public class ServerboundChangePlayerDimensionPacket {
@@ -64,11 +66,16 @@ public class ServerboundChangePlayerDimensionPacket {
 
 		Holder<Biome> biome = newLevel.getBiome(player.blockPosition());
 		if (biome.is(Tags.Biomes.IS_VOID) || (
-				biome.is(Tags.Biomes.IS_END)
-						&& newLevel.getBlockState(player.blockPosition().below()).isAir()
-						&& !player.blockPosition().closerThan(BlockPos.ZERO.above((int) y), 64))) {
+				biome.is(Tags.Biomes.IS_END) && Objects.requireNonNull(newLevel.dragonFight()).hasPreviouslyKilledDragon())) {
+			return false;
+		} else {
+			if (biome.is(Tags.Biomes.IS_VOID) || (
+					biome.is(Tags.Biomes.IS_END)
+							&& newLevel.getBlockState(player.blockPosition().below()).isAir()
+							&& !player.blockPosition().closerThan(BlockPos.ZERO.above((int) y), 64))) {
 
-			newLevel.setBlock(player.blockPosition().below(), Blocks.GLASS.defaultBlockState(), 2);
+				newLevel.setBlock(player.blockPosition().below(), Blocks.DIRT.defaultBlockState(), 2);
+			}
 		}
 		return true;
 	}

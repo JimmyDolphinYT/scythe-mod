@@ -15,16 +15,16 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import org.lwjgl.glfw.GLFW;
 
 @OnlyIn(Dist.CLIENT)
-public class ScytheScreen extends Screen {
+public class ScytheDimensionScreen extends Screen {
 	private EditBox dimensionInput;
 	protected String suggestion;
 
-	protected ScytheScreen(Component pTitle) {
+	protected ScytheDimensionScreen(Component pTitle) {
 		super(pTitle);
 	}
 
-	public ScytheScreen() {
-		super(new TranslatableComponent("menu.scythe.scythe"));
+	public ScytheDimensionScreen() {
+		super(new TranslatableComponent("menu.scythe.dimension"));
 	}
 
 	@Override
@@ -77,6 +77,9 @@ public class ScytheScreen extends Screen {
 		}
 
 		super.render(pPoseStack, pMouseX, pMouseY, pPartialTick);
+	}
+	public boolean isPauseScreen() {
+		return false;
 	}
 
 	@Override

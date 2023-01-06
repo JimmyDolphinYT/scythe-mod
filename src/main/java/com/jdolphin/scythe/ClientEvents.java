@@ -1,6 +1,7 @@
 package com.jdolphin.scythe;
 
-import com.jdolphin.scythe.client.gui.screens.ScytheScreen;
+import com.jdolphin.scythe.client.gui.screens.ScytheAbilityScreen;
+import com.jdolphin.scythe.client.gui.screens.ScytheDimensionScreen;
 import com.jdolphin.scythe.init.ModItems;
 import com.jdolphin.scythe.keybind.Keybinds;
 import net.minecraft.client.Minecraft;
@@ -20,7 +21,7 @@ public class ClientEvents {
 			if (Keybinds.KEY_SCYTHE_MENU.consumeClick()) {
 				Minecraft minecraft = Minecraft.getInstance();
 				if (minecraft.player.getMainHandItem().is(ModItems.SCYTHE.get())) {
-					minecraft.setScreen(new ScytheScreen());
+					minecraft.setScreen(new ScytheAbilityScreen());
 				}
 			}
 		}
