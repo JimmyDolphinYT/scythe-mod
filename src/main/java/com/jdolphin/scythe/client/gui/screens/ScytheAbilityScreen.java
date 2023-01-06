@@ -54,8 +54,6 @@ public class ScytheAbilityScreen extends Screen {
     public void render(PoseStack pPoseStack, int pMouseX, int pMouseY, float pPartialTick) {
         this.renderBackground(pPoseStack);
         renderBackground(pPoseStack, 1, 1, 1);
-        fill(pPoseStack, 2, this.height - 14, this.width - 2,
-                this.height - 2, this.minecraft.options.getBackgroundColor(Integer.MIN_VALUE));
         super.render(pPoseStack, pMouseX, pMouseY, pPartialTick);
     }
 
