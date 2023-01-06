@@ -22,8 +22,6 @@ import org.lwjgl.opengl.GL11;
 public class ScytheDimensionScreen extends Screen {
 	private EditBox dimensionInput;
 	protected String suggestion;
-	int backgroundWidth = 256;
-	int backgroundHeight = 64;
 
 	protected ScytheDimensionScreen(Component pTitle) {
 		super(pTitle);
