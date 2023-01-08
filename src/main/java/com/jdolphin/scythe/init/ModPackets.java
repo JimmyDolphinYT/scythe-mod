@@ -2,6 +2,7 @@ package com.jdolphin.scythe.init;
 
 import com.jdolphin.scythe.ScytheMod;
 import com.jdolphin.scythe.network.ServerboundChangePlayerDimensionPacket;
+import com.jdolphin.scythe.network.ServerboundReplaceItemPacket;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.network.NetworkDirection;
 import net.minecraftforge.network.NetworkRegistry;
@@ -22,5 +23,10 @@ public class ModPackets {
 				.decoder(ServerboundChangePlayerDimensionPacket::read)
 				.consumer(ServerboundChangePlayerDimensionPacket::handle).add();
 
+		INSTANCE.messageBuilder(ServerboundReplaceItemPacket.class, index++, NetworkDirection.PLAY_TO_SERVER)
+				.encoder(ServerboundReplaceItemPacket::encode)
+				.decoder(ServerboundReplaceItemPacket::new)
+				.consumer(ServerboundReplaceItemPacket::handle)
+				.add();
 	}
 }
