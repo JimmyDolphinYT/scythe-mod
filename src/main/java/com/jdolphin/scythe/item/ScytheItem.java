@@ -47,8 +47,9 @@ public class ScytheItem extends AxeItem {
 
 		if (mode != null) switch (mode) {
 			case DIMENSION_HOP:
-				if (!pLevel.isClientSide)
+				if (!pLevel.isClientSide && !dimension.equals(pPlayer.getLevel().dimension().location()))
 					dimensionHop((ServerPlayer) pPlayer, dimension);
+
 				break;
 		}
 
