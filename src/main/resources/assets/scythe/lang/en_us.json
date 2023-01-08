@@ -4,10 +4,12 @@
   "menu.scythe.ability": "Scythe Abilities",
   "key.category.scythe": "Scythe Keybindings",
   "key.scythe.scythe_menu": "Scythe Menu",
+  "key.scythe.scythe_menu.dimension_hop": "Scythe menu: Dimensional Hop",
+  "key.scythe.scythe_menu.dash": "Scythe menu: Dash",
+  "key.scythe.scythe_menu.invisibility": "Scythe menu: Invisibility",
+  "key.scythe.scythe_menu.passive": "Scythe menu: Passive",
   "scythe.ability.dim_hop": "Dimensional Hop",
   "scythe.ability.dash": "Dash",
   "scythe.ability.invisibility": "Invisibility",
   "scythe.ability.passive": "Passive"
-
-
 }
