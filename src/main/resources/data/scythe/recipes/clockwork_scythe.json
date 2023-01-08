@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "C": {
+      "item": "minecraft:clock"
+    },
+    "S": {
+      "item": "minecraft:nether_star"
+    }
+  ,
+  "N": {
+    "tag": "forge:ingots/netherite"
+  }
+},
+  "pattern": [
+    "CSN",
+    "# N",
+    "#  "
+  ],
+  "result": {
+    "item": "scythe:clockwork_scythe"
+  }
+}
