@@ -62,17 +62,13 @@ public class ScytheItem extends AxeItem {
 				break;
 
 			case INVISIBILITY:
-				if (pPlayer.hasEffect(MobEffects.INVISIBILITY)) {
-					pPlayer.removeEffect(MobEffects.INVISIBILITY);
-					break;
-				}
 
 				for (int i = 0; i < 20; i++)
 					pLevel.addParticle(ParticleTypes.CLOUD, true, pPlayer.getX(), pPlayer.getY(), pPlayer.getZ(),
 							random.nextFloat(-0.2f, 0.2f), random.nextFloat(-0.2f, 0.2f),
 							random.nextFloat(-0.2f, 0.2f));
 
-				pPlayer.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, Integer.MAX_VALUE, 1,
+				pPlayer.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 500, 1,
 						true, false, true));
 
 				break;
@@ -86,7 +82,7 @@ public class ScytheItem extends AxeItem {
 				float pY = -Mth.sin((xRot + zRot) * ((float) Math.PI / 180F));
 				float pZ = Mth.cos(yRot * ((float) Math.PI / 180F)) * Mth.cos(xRot * ((float) Math.PI / 180F));
 				float inaccuracy = 0;
-				float velocity = 1.25f;
+				float velocity = 1f;
 
 				Vec3 vec3 = (new Vec3(pX, pY, pZ)).normalize().add(random.nextGaussian() * (double) 0.0075F * (double) inaccuracy, random.nextGaussian() * (double) 0.0075F * (double) inaccuracy, random.nextGaussian() * (double) 0.0075F * (double) inaccuracy).scale(velocity);
 				pPlayer.setDeltaMovement(vec3);
